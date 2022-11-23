@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace CalcCurrentValue
 {
-    class CalcCurrentValue
+    class CurrentValueCalculator
     {
         public enum TransactionType
         {
             Buy,
             Sell
         }
-
-        public double CalcCV(double tradeprice, int nominal, TransactionType tp)
+        public double GetCurrentValue(double tradeprice, int nominal, TransactionType tp)
         {
-             
             return tp == TransactionType.Buy ? tradeprice * nominal : -1 * tradeprice * nominal;
         }
 

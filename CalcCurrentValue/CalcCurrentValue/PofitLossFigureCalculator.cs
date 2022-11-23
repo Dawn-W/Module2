@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CalcCurrentValue
 {
-    class CalcPL
+    class PofitLossFigureCalculator
     {
-        public CalcPL()
+        public PofitLossFigureCalculator()
         {
 
         }
-        public CalcPL(double tradeprice, double originalprice, int nominal)
+        public PofitLossFigureCalculator(double tradeprice, double originalprice, int nominal)
         {
             TradePrice = tradeprice;
             OriginalPrice = originalprice;
@@ -22,7 +22,7 @@ namespace CalcCurrentValue
         public double OriginalPrice { get; }
         public int Nominal { get; }
 
-        public double PL() => (TradePrice - OriginalPrice) * Nominal;
+        public double GetPofitLossFigure() => (TradePrice - OriginalPrice) * Nominal;
 
     }
 }

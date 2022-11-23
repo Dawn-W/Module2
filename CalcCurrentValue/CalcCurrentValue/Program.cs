@@ -1,5 +1,5 @@
 ﻿using System;
-using static CalcCurrentValue.CalcCurrentValue;
+using static CalcCurrentValue.CurrentValueCalculator;
 
 namespace CalcCurrentValue
 {
@@ -17,19 +17,18 @@ namespace CalcCurrentValue
             TransactionType trcType;
             trcType = (TransactionType)Enum.Parse(typeof(TransactionType),transactionTpye,true);
 
-            var ccv = new CalcCurrentValue();
-            double result = ccv.CalcCV(tradeprice, nominal, trcType);
+            var cvCalculator = new CurrentValueCalculator();
+            double result = cvCalculator.GetCurrentValue(tradeprice, nominal, trcType);
             Console.WriteLine($"The Current Value is: {result}.");
 
             if(trcType == TransactionType.Sell)
             {
                 Console.WriteLine("Input the original price: ");
                 double originalprice = double.Parse(Console.ReadLine());
-                var pl = new CalcPL(tradeprice, originalprice, nominal);
-                var plResult = pl.PL();
+                var pofitlostfigure = new PofitLossFigureCalculator(tradeprice, originalprice, nominal);
+                var plResult = pofitlostfigure.GetPofitLossFigure();
                 Console.WriteLine($"The profit loss figure is: {plResult}");
             }
-
             Console.ReadKey();
         }
     }

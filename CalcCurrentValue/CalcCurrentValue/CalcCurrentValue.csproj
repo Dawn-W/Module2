@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalcCurrentValue.cs" />
-    <Compile Include="CalcPL.cs" />
+    <Compile Include="CurrentValueCalculator.cs" />
+    <Compile Include="PofitLossFigureCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
