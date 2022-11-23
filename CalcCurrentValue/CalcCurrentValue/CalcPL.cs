@@ -18,9 +18,9 @@ namespace CalcCurrentValue
             OriginalPrice = originalprice;
             Nominal = nominal;
         }
-        public double TradePrice { get; set; }
-        public double OriginalPrice { get; set; }
-        public int Nominal { get; private set; }
+        public double TradePrice { get; }
+        public double OriginalPrice { get; }
+        public int Nominal { get; }
 
         public double PL() => (TradePrice - OriginalPrice) * Nominal;
 
